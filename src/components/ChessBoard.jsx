@@ -1,27 +1,38 @@
 import ChessSquare from "./ChessSquare";
 import '../style/Chess.css';
 
-export default function ChessBoard(){
+export default function ChessBoard(props){
+    const boardState = props.boardState;
+    const setState = props.setState;
+    console.log(props);
+
 
     function squareClicked(i, j){
-        console.log(`${i} ${j} clicked`);
+        setState({
+            row:i,
+            column:j
+        });
     }
 
     const squaresArr = [];
     for(let i = 0; i < 8; i ++){
+        squaresArr.push([]);
         for (let j = 0; j < 8; j++){
-            if ((i + j) % 2 === 1){
-                squaresArr.push(
+            if (boardState && i === boardState.row && j === boardState.column){
+                squaresArr[i].push(
+                    <ChessSquare color="red" row={i} col={j} squareClicked={squareClicked} key={`${i}${j}`}/>
+                )
+            }else if ((i + j) % 2 === 1){
+                squaresArr[i].push(
                     <ChessSquare color="blue" row={i} col={j} squareClicked={squareClicked} key={`${i}${j}`}/>
                 )
             }else{
-                squaresArr.push(
+                squaresArr[i].push(
                     <ChessSquare color="white" row={i} col={j} squareClicked={squareClicked} key={`${i}${j}`}/>
                 )
             }
         }
     }
-    console.log("hi")
 
     return <div className="board-container">
         {squaresArr}

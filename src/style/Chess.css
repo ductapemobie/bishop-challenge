@@ -6,6 +6,10 @@
     background-color: #e6ecff;
 }
 
+.red-square {
+    background-color: #da0000
+}
+
 .board-container {
     margin:auto;
     height:600px;  

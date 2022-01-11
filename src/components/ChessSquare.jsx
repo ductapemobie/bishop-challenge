@@ -15,6 +15,8 @@ export default function ChessSquare(props){
         retDiv = <div className='blue-square' onClick={handleClick}></div>
     }else if (squareColor === "white"){
         retDiv = <div className='white-square' onClick={handleClick}></div>
+    }else if (squareColor === "red"){
+        retDiv = <div className='red-square' onClick={handleClick}></div>
     }else{
         throw new Error("Invalid Square Color");
     }

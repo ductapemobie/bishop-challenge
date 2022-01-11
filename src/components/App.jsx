@@ -2,8 +2,10 @@ import { useState } from "react";
 import CalcButton from "./CalcButton";
 import ChessBoard from "./ChessBoard";
 import DisplayBoard from "./DisplayBoard";
+import Footer from "./Footer";
 import NumberInput from "./NumberInput";
 import ResetButton from "./ResetButton";
+import TextInputs from "./TextInputs";
 
 export default function App(){
     const [startPosition, setStartPosition] = useState({row:-1, column:-1});
@@ -14,29 +16,24 @@ export default function App(){
 
     return <>
         <h1 className="header">Bishop Challenge</h1>
-        {calcState?
-        //state for displaying the answer
-        <>
-        <DisplayBoard answerState={answerState}/>
-        </>
-        :
-        //state for inputting values 
-        <>
         <div className="board-holder">
-            <div className="subheader">Starting Position</div>
-            <div className="subheader">Number of Moves</div>
-            <div className="subheader">End Position</div>
-            <ChessBoard boardState={startPosition} setState={setStartPosition}/>
+            <ChessBoard boardState={startPosition} setState={setStartPosition}
+            endPosition={endPosition} setEndPosition={setEndPosition}/>
+        <div>
             <NumberInput setMoveCount={setMoveCount}/>
-            <ChessBoard boardState={endPosition} setState={setEndPosition}/>
+            <TextInputs setState={setStartPosition} type={"Start"}/>
+            <TextInputs setState={setEndPosition} type={"End"}/>
+            <div className="center-item">
+                <CalcButton setState={setCalcState} startPosition={startPosition} 
+                    endPosition={endPosition} moveCount={moveCount} 
+                    setAnswerState={setAnswerState}/>
+                <ResetButton setCalc={setCalcState} setAnswer={setAnswerState}/>
+            </div>
+            {calcState?<DisplayBoard answerState={answerState}/>:<></>}
         </div>
-            <CalcButton setState={setCalcState} startPosition={startPosition} 
-                endPosition={endPosition} moveCount={moveCount} 
-                setAnswerState={setAnswerState}/>
-        </>
-        }
-        <ResetButton setStart={setStartPosition} setEnd={setEndPosition} 
-            setCalc={setCalcState} setAnswer={setAnswerState}
-            setMoveCount={setMoveCount}/>
+        </div>
+
+        
+        <Footer/>
     </>
 }

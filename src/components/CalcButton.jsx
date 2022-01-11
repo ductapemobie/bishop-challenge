@@ -6,9 +6,6 @@ export default function CalcButton(props){
     const setAnswerState = props.setAnswerState;
 
     function runNumbers(){
-        console.log(moveCount);
-        console.log(startPos);
-        console.log(endPos);
         if (moveCount == 0){
             if ((startPos.row === endPos.row) && (startPos.column === endPos.column)){
                 return true;

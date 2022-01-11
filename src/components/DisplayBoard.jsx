@@ -3,11 +3,11 @@
 export default function DisplayBoard(props){
     const answerState = props.answerState;
 
-    return <>
+    return <div className="center-item">
     {answerState===true?
     <h1>This is possible</h1>
     :
     <h1>This is Not possible</h1>
     }
-    </>
+    </div>
 }

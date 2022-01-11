@@ -3,9 +3,11 @@ export default function NumberInput(props){
 
     function updateNumber(event){
         const val = event.target.value;
-        console.log(val);
         setMoveCount(val);
     }
 
-    return <div><input type='number' className="number-input" onChange={updateNumber}/></div>
+    return <div className="center-item">
+        Number of Moves
+        <input type='number' className="number-input" onChange={updateNumber}/>
+    </div>
 }

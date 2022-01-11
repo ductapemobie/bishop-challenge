@@ -12,8 +12,8 @@
 
 .board-container {
     margin:auto;
-    height:600px;  
-    width:600px;
+    height:400px;  
+    width:400px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -33,6 +33,23 @@
 .header{
     width:fit-content;
     margin:auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
 }
+
+.subheader{
+    width:fit-content;
+    margin:auto;
+    padding-bottom: 20px;
+}
+
+.board-holder {
+    display: grid; 
+    width: 850px;
+    margin: auto;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0.3fr 1.7fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."
+      ". ."; 
+  }

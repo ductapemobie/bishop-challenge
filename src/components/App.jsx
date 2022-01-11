@@ -8,7 +8,12 @@ export default function App(){
 
     return <>
         <h1 className="header">Bishop Challenge</h1>
-        <ChessBoard boardState={startPosition} setState={setStartPosition}/>
+        <div className="board-holder">
+            <div className="subheader">Starting Position</div>
+            <div className="subheader">End Position</div>
+            <ChessBoard boardState={startPosition} setState={setStartPosition}/>
+            <ChessBoard boardState={endPosition} setState={setEndPosition}/>
+        </div>
         <ResetButton setStart={setStartPosition} setEnd={setEndPosition}/>
     </>
 }

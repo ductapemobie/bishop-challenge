@@ -33,9 +33,9 @@ export default function ChessBoard(props){
                 i === boardState.row && j == boardState.column){
                 colorVal = 'yellow';
             }else if (endPosition && i === endPosition.row && j === endPosition.column){
-                colorVal = 'green';
-            }else if (boardState && i === boardState.row && j === boardState.column){
                 colorVal = 'red';
+            }else if (boardState && i === boardState.row && j === boardState.column){
+                colorVal = 'green';
             }else if ((i + j) % 2 === 1){
                 colorVal = 'blue';
             }else{

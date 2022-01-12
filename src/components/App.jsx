@@ -1,4 +1,5 @@
 import { useState } from "react";
+import About from "./About";
 import CalcButton from "./CalcButton";
 import ChessBoard from "./ChessBoard";
 import DisplayBoard from "./DisplayBoard";
@@ -31,6 +32,7 @@ export default function App(){
                     setCalc={setCalcState} setAnswer={setAnswerState}
                     setMoveCount={setMoveCount}/>
             </div>
+            <About/>
             {calcState?<DisplayBoard answerState={answerState}/>:<></>}
         </div>
         </div>

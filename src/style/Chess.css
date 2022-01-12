@@ -98,3 +98,8 @@ https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlig
     bottom:0;
     position:fixed;
 }
+
+.about-block{
+    width: 75%;
+    text-align: left;
+}

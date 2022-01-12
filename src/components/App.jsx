@@ -27,7 +27,9 @@ export default function App(){
                 <CalcButton setState={setCalcState} startPosition={startPosition} 
                     endPosition={endPosition} moveCount={moveCount} 
                     setAnswerState={setAnswerState}/>
-                <ResetButton setCalc={setCalcState} setAnswer={setAnswerState}/>
+                <ResetButton setStart={setStartPosition} setEnd={setEndPosition} 
+                    setCalc={setCalcState} setAnswer={setAnswerState}
+                    setMoveCount={setMoveCount}/>
             </div>
             {calcState?<DisplayBoard answerState={answerState}/>:<></>}
         </div>

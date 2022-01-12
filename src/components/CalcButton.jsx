@@ -13,7 +13,7 @@ export default function CalcButton(props){
                 return false;
             }
         }else if (moveCount == 1){
-            if ( (startPos.row + endPos.row) === (startPos.column + endPos.column) 
+            if ( (startPos.row + startPos.column) === (endPos.row + endPos.column) 
             || (startPos.row - endPos.row) === (startPos.column - endPos.column) ){
                 return true;
             }else{
